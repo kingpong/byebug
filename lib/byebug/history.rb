@@ -116,6 +116,8 @@ module Byebug
       return false if Readline::HISTORY.length == 0
 
       Readline::HISTORY[Readline::HISTORY.length - 1] == buf
+    rescue IndexError
+      return true
     end
   end
 end
